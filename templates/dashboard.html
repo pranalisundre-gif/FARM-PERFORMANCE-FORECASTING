@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarmVision AI | Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='dashboard.css') }}">
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- ======================================================
+     TOP NAVBAR
+======================================================= -->
+
+<header class="dashboard-navbar">
+
+    <div class="nav-left">
+
+        <div class="brand-logo">
+
+            <div class="logo-circle">
+                <i class="fas fa-seedling"></i>
+            </div>
+
+            <div>
+
+                <h2>FarmVision AI</h2>
+
+                <span>Smart Farming. Better Future.</span>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+
+                <i class="fas fa-table-columns"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="#forecast-section">
+
+                <i class="fas fa-chart-line"></i>
+
+                Forecast
+
+            </a>
+
+            <a href="#summary-section">
+
+                <i class="fas fa-layer-group"></i>
+
+                Summary
+
+            </a>
+
+            <a href="#table-section">
+
+                <i class="fas fa-table"></i>
+
+                Reports
+
+            </a>
+
+        </nav>
+
+    </div>
+
+    <div class="nav-right">
+
+        <a href="/" class="home-btn">
+
+            <i class="fas fa-house"></i>
+
+            Home
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     MAIN DASHBOARD
+======================================================= -->
+
+<div class="dashboard-wrapper">
+
+    <!-- ==========================================
+         LEFT SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar-panel">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-icon">
+
+                <i class="fas fa-tractor"></i>
+
+            </div>
+
+            <div>
+
+                <h2>Farm Input Details</h2>
+
+                <p>
+
+                    Fill all farm information below to
+                    generate AI powered insights and
+                    future demand forecast.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- =====================================
+             PREDICTION FORM
+        ====================================== -->
+
+        <form id="predictionForm">
+
+            <!-- Farm Size -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-warehouse"></i>
+
+                    Farm Size (Birds)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="farm_size"
+                    name="farm_size"
+                    placeholder="Eg. 3000"
+                    required>
+
+            </div>
+
+            <!-- Experience -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-user-graduate"></i>
+
+                    Farmer Experience (Years)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="experience"
+                    name="experience"
+                    placeholder="Eg. 7"
+                    required>
+
+            </div>
+
+            <!-- Total Chicks -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-dove"></i>
+
+                    Total Chicks
+
+                </label>
+
+                <input
+                    type="number"
+                    id="total_chicks"
+                    name="total_chicks"
+                    placeholder="Eg. 3000"
+                    required>
+
+            </div>
+
+            <!-- Mortality -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-skull-crossbones"></i>
+
+                    Total Mortality
+
+                </label>
+
+                <input
+                    type="number"
+                    id="mortality"
+                    name="mortality"
+                    placeholder="Eg. 60"
+                    required>
+
+            </div>
+            <!-- Feed Consumed -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-wheat-awn"></i>
+
+                    Total Feed Consumed (kg)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="feed"
+                    name="feed"
+                    placeholder="Eg. 10500"
+                    required>
+
+            </div>
+
+            <!-- Sales Quantity -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-cart-shopping"></i>
+
+                    Total Sales Quantity
+
+                </label>
+
+                <input
+                    type="number"
+                    id="sales_qty"
+                    name="sales_qty"
+                    placeholder="Eg. 2940"
+                    required>
+
+            </div>
+
+            <!-- ROI -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    Expected ROI (%)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="expected_roi"
+                    name="expected_roi"
+                    placeholder="Eg. 40"
+                    required>
+
+            </div>
+
+            <!-- Forecast Days -->
+
+            <div class="input-box">
+
+                <label>
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    Forecast Horizon (Days)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="forecast_days"
+                    name="forecast_days"
+                    value="30"
+                    required>
+
+            </div>
+
+            <!-- Mortality Rate -->
+
+            <div class="mortality-card">
+
+                <div class="mortality-title">
+
+                    <i class="fas fa-heart-pulse"></i>
+
+                    Mortality Rate (%)
+
+                </div>
+
+                <input
+                    type="text"
+                    id="mortality_rate"
+                    readonly>
+
+            </div>
+
+            <!-- Submit -->
+
+            <button
+                type="submit"
+                class="predict-btn">
+
+                <i class="fas fa-sparkles"></i>
+
+                Predict & Generate Forecast
+
+            </button>
+
+        </form>
+
+        <!-- Security -->
+
+        <div class="sidebar-footer">
+
+            <i class="fas fa-shield-halved"></i>
+
+            <span>
+
+                Your farm data is encrypted and processed securely.
+
+            </span>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         RIGHT CONTENT
+    =========================================== -->
+
+    <main class="dashboard-content">
+
+        <!-- Header -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <h1 class="results-title">
+
+                    <i class="fas fa-arrow-trend-up"></i>
+                    Prediction Results
+
+                </h1>
+
+                <p>
+
+                    Analyze farm performance,
+                    forecast demand and receive
+                    AI-powered recommendations.
+
+                </p>
+
+            </div>
+
+            <div class="date-card">
+
+                <div class="date-icon">
+
+                    <i class="fas fa-calendar"></i>
+
+                </div>
+
+                <div>
+
+                    <small>Today's Date</small>
+
+                    <h4 id="currentDate"></h4>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             KPI SECTION
+        ====================================== -->
+
+        <section class="kpi-section">
+
+            <!-- Primary Cards -->
+
+            <div class="primary-kpis">
+
+                <!-- Farm Performance -->
+
+                <div class="kpi-card primary">
+
+                    <div class="kpi-icon green">
+
+                        <i class="fas fa-chart-column"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Farm Performance</span>
+
+                        <h2 id="performance_result">
+
+                            --
+
+                        </h2>
+
+                        <small>
+
+                            Overall Farm Health
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <!-- Revenue -->
+
+                <div class="kpi-card primary">
+
+                    <div class="kpi-icon emerald">
+
+                        <i class="fas fa-indian-rupee-sign"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Estimated Revenue</span>
+
+                        <h2 id="revenue_result">
+
+                            ₹0
+
+                        </h2>
+
+                        <small>
+
+                            Predicted Earnings
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <!-- Demand -->
+
+                <div class="kpi-card primary">
+
+                    <div class="kpi-icon blue">
+
+                        <i class="fas fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Average Demand</span>
+
+                        <h2 id="average_demand">
+
+                            --
+
+                        </h2>
+
+                        <small>
+
+                            Next 30 Days
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- =====================================
+                 SECONDARY KPI CARDS
+            ====================================== -->
+
+            <div class="secondary-kpis">
+
+                <!-- Peak Demand -->
+
+                <div class="mini-kpi">
+
+                    <div class="mini-icon success">
+
+                        <i class="fas fa-arrow-trend-up"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Peak Demand</span>
+
+                        <h3 id="peak_demand">--</h3>
+
+                    </div>
+
+                </div>
+
+                <!-- Lowest Demand -->
+
+                <div class="mini-kpi">
+
+                    <div class="mini-icon warning">
+
+                        <i class="fas fa-arrow-trend-down"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Lowest Demand</span>
+
+                        <h3 id="lowest_demand">--</h3>
+
+                    </div>
+
+                </div>
+
+                <!-- Trend -->
+
+                <div class="mini-kpi">
+
+                    <div class="mini-icon info">
+
+                        <i class="fas fa-chart-simple"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Demand Trend</span>
+
+                        <h3 id="trend_result">--</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FORECAST + AI SECTION
+        ====================================== -->
+
+        <section
+            class="forecast-layout"
+            id="forecast-section">
+
+            <!-- Forecast Chart -->
+
+            <div class="forecast-card">
+
+                <div class="section-top">
+
+                    <div>
+
+                        <span class="section-label">
+
+                            AI Forecast
+
+                        </span>
+
+                        <h2>
+
+                            Demand Forecast Analysis
+
+                        </h2>
+
+                        <p>
+
+                            Forecast generated using
+                            Machine Learning based on
+                            farm production history.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="forecastChart"
+                    class="forecast-chart">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AI Insights -->
+
+            <aside class="ai-panel">
+
+                <div class="panel-title">
+
+                    <i class="fas fa-robot"></i>
+
+                    <div>
+
+                        <h2>
+
+                            AI Insights
+
+                        </h2>
+
+                        <p>
+
+                            Smart recommendations
+                            generated automatically.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight-item">
+
+                    <div class="insight-icon green">
+
+                        <i class="fas fa-seedling"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Farm Health
+
+                        </h4>
+
+                        <p>
+
+                            Farm performance is analysed
+                            using production,
+                            mortality and ROI.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight-item">
+
+                    <div class="insight-icon blue">
+
+                        <i class="fas fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Demand Forecast
+
+                        </h4>
+
+                        <p>
+
+                            Demand prediction helps
+                            optimize inventory and
+                            production planning.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight-item">
+
+                    <div class="insight-icon orange">
+
+                        <i class="fas fa-lightbulb"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Recommendation
+
+                        </h4>
+
+                        <p>
+
+                            Maintain healthy mortality
+                            rate and balanced feed
+                            consumption for better ROI.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight-item">
+
+                    <div class="insight-icon purple">
+
+                        <i class="fas fa-shield-heart"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            AI Confidence
+
+                        </h4>
+
+                        <p>
+
+                            Prediction is based on the
+                            trained machine learning
+                            model and farm statistics.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+        <!-- =====================================
+             FARM INPUT SUMMARY
+        ====================================== -->
+
+        <div class="bottom-dashboard-grid">
+
+        <section
+            class="summary-section"
+            id="summary-section">
+
+            <div class="section-heading">
+
+                <h2>
+
+                    <i class="fas fa-clipboard-list"></i>
+
+                    Farm Input Summary
+
+                </h2>
+
+                <p>
+
+                    Review all submitted farm values used
+                    for AI prediction.
+
+                </p>
+
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Farm Size</span>
+                        <h3 id="summary_farm_size">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Experience</span>
+                        <h3 id="summary_experience">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Total Chicks</span>
+                        <h3 id="summary_chicks">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-skull-crossbones"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Mortality</span>
+                        <h3 id="summary_mortality">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-wheat-awn"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Feed Consumed</span>
+                        <h3 id="summary_feed">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-cart-shopping"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Sales Quantity</span>
+                        <h3 id="summary_sales">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Expected ROI</span>
+                        <h3 id="summary_roi">--</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>Mortality Rate</span>
+                        <h3 id="summary_rate">--</h3>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FORECAST TABLE
+        ====================================== -->
+
+        <section
+            class="table-section report-section"
+            id="table-section">
+
+            <div class="section-heading report-header">
+                <div>
+                    <h2>
+                        <i class="fas fa-table"></i>
+                        Demand Forecast Report
+                    </h2>
+                    <p>AI generated prediction report</p>
+                </div>
+                <div class="report-actions">
+                    <button
+                        id="downloadForecast"
+                        class="download-btn">
+                        <i class="fas fa-file-csv"></i>
+                        Download CSV
+                    </button>
+                    <button
+                        id="downloadPDF"
+                        class="download-btn pdf-btn">
+                        <i class="fas fa-file-pdf"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+
+                <div class="table-responsive">
+
+                <table id="forecastTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Day</th>
+
+                            <th>Predicted Demand</th>
+
+                            <th>Confidence</th>
+                            
+                            <th>Trend</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================
+     LOADING OVERLAY
+====================================== -->
+
+<div
+    id="loadingOverlay"
+    class="loading-overlay">
+
+    <div class="loading-card">
+
+        <div class="loader-ring"></div>
+
+        <h2>
+
+            AI Analysis in Progress
+
+        </h2>
+
+        <p>
+
+            Please wait while FarmVision AI
+            analyzes your farm and generates
+            the demand forecast.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     ALERT BOX
+====================================== -->
+
+<div
+    id="alertBox"
+    class="alert-box">
+
+</div>
+
+
+
+<!-- =====================================
+     CURRENT DATE
+====================================== -->
+
+<script>
+
+document.getElementById("currentDate").textContent =
+new Date().toLocaleDateString(
+"en-IN",
+{
+weekday:"long",
+day:"numeric",
+month:"long",
+year:"numeric"
+});
+
+</script>
+
+
+
+<!-- =====================================
+     SCRIPT
+====================================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>        

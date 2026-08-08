@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farm Performance & Forecasting</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+        HEADER
+============================ -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div class="logo-text">
+                <h2>FarmVision AI</h2>
+                <span>Machine Learning Platform</span>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li><a href="#" class="active">Home</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#statistics">Statistics</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+        <a href="/dashboard" class="btn-primary">
+
+            Start Prediction
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ===========================
+        HERO SECTION
+============================ -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <!-- LEFT -->
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                AI Powered Agriculture
+
+            </span>
+
+            <h1>
+
+                Transform Your
+
+                <span>
+
+                    Farm Decisions
+
+                </span>
+
+                With Artificial Intelligence
+
+            </h1>
+
+            <p>
+
+                Improve productivity, forecast demand, estimate revenue,
+                and analyze poultry farm performance using advanced
+                Machine Learning models designed for modern agriculture.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/dashboard" class="btn-primary">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Launch Dashboard
+
+                </a>
+
+                <a href="#features" class="btn-secondary">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Explore Features
+
+                </a>
+
+            </div>
+
+            <!-- Stats -->
+
+            <div class="hero-mini-stats">
+
+                <div class="mini-card">
+
+                    <h3>95%</h3>
+
+                    <span>Prediction Accuracy</span>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <h3>24/7</h3>
+
+                    <span>AI Availability</span>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <h3>Instant</h3>
+
+                    <span>Forecast Results</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="hero-image">
+
+            <div class="hero-illustration">
+
+                <div class="circle-bg">
+                    <img src="{{ url_for('static', filename='images/hero-farm.png') }}"
+                    alt="Farm AI">
+                </div>
+
+                <div class="floating-card card-one">
+
+                    <i class="fa-solid fa-coins"></i>
+
+                    <div>
+
+                        <strong>Revenue</strong>
+
+                        <p>Expected Growth</p>
+
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-two">
+
+                    <i class="fa-solid fa-egg"></i>
+
+                    <div>
+
+                        <strong>Poultry</strong>
+
+                        <p>Performance</p>
+
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-three">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                    <div>
+
+                        <strong>Forecast</strong>
+
+                        <p>30 Days</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+    FEATURES SECTION STARTS
+============================ -->
+
+<section class="features" id="features">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>OUR FEATURES</span>
+
+            <h2>
+
+                Powerful AI Tools For Smarter Farming
+
+            </h2>
+
+            <p>
+
+                Designed specifically for poultry farm management and
+                predictive analytics using Machine Learning.
+
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+        <!-- Feature Card 1 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <h3>Farm Performance Analysis</h3>
+
+            <p>
+
+                Analyze poultry farm performance using Machine Learning
+                to understand production efficiency and overall farm health.
+
+            </p>
+
+        </div>
+
+        <!-- Feature Card 2 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+
+            </div>
+
+            <h3>Revenue Prediction</h3>
+
+            <p>
+
+                Estimate expected revenue based on historical farm data,
+                production values and market trends.
+
+            </p>
+
+        </div>
+
+        <!-- Feature Card 3 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+            <h3>Demand Forecasting</h3>
+
+            <p>
+
+                Predict future demand for upcoming days using intelligent
+                forecasting algorithms.
+
+            </p>
+
+        </div>
+
+        <!-- Feature Card 4 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <h3>AI Decision Support</h3>
+
+            <p>
+
+                Generate accurate insights that help farmers take smarter
+                business decisions with confidence.
+
+            </p>
+
+        </div>
+
+        <!-- Feature Card 5 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+            <h3>Data Driven Reports</h3>
+
+            <p>
+
+                Visualize farm performance through interactive reports,
+                KPIs and analytical summaries.
+
+            </p>
+
+        </div>
+
+        <!-- Feature Card 6 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-cloud"></i>
+
+            </div>
+
+            <h3>Future Ready Platform</h3>
+
+            <p>
+
+                Built with Flask and Machine Learning to provide a fast,
+                scalable and reliable prediction system.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================
+                ABOUT SECTION
+=========================================== -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+
+            <div class="about-card">
+
+                <div class="about-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+                <h2>Smart Farming</h2>
+
+                <p>
+
+                    Artificial Intelligence helps farmers improve production,
+                    reduce risks and maximize profitability through intelligent
+                    predictions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <span class="section-badge">
+
+                ABOUT PROJECT
+
+            </span>
+
+            <h2>
+
+                Farm Performance & Forecasting using Machine Learning
+
+            </h2>
+
+            <p>
+
+                This intelligent web application predicts farm performance,
+                expected revenue and future demand using trained Machine
+                Learning models.
+
+            </p>
+
+            <p>
+
+                The platform assists poultry farmers by converting raw farm
+                data into meaningful insights that support better planning
+                and business decisions.
+
+            </p>
+
+            <div class="about-list">
+
+                <div>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    AI Based Prediction
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Revenue Estimation
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Demand Forecast
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Interactive Dashboard
+
+                </div>
+
+            </div>
+
+            <a href="/dashboard" class="btn-primary">
+
+                Start Prediction
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================
+                STATISTICS
+=========================================== -->
+
+<section class="statistics" id="statistics">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>OUR ACHIEVEMENTS</span>
+
+            <h2>
+
+                AI Powered Agricultural Analytics
+
+            </h2>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h2>95%</h2>
+
+                <p>Prediction Accuracy</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>500+</h2>
+
+                <p>Predictions Generated</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>24/7</h2>
+
+                <p>System Availability</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>30 Days</h2>
+
+                <p>Forecast Horizon</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================
+                CALL TO ACTION
+=========================================== -->
+
+<section class="cta-section">
+
+    <div class="container cta-box">
+
+        <div>
+
+            <span>GET STARTED TODAY</span>
+
+            <h2>
+
+                Ready To Improve Your Farm With AI?
+
+            </h2>
+
+            <p>
+
+                Experience intelligent prediction, forecasting and
+                farm performance analysis through our Machine Learning platform.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <a href="/dashboard" class="btn-light">
+
+                Launch Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================
+        CONTACT SECTION STARTS
+=========================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>CONTACT</span>
+
+            <h2>
+
+                Get In Touch
+
+            </h2>
+
+            <p>
+
+                We'd love to hear from you regarding Farm Performance &
+                Forecasting and AI-powered agriculture solutions.
+
+            </p>
+
+        </div>
+        <div class="contact-grid">
+
+            <!-- Contact Card -->
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-building"></i>
+
+                <h3>Organization</h3>
+
+                <p>DASA TECHNOWORLD PVT. LTD.</p>
+
+            </div>
+
+            <!-- Contact Card -->
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <h3>Email</h3>
+
+                <p>support@farmvision.ai</p>
+
+            </div>
+
+            <!-- Contact Card -->
+
+            <div class="contact-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>Location</h3>
+
+                <p>India</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================
+                FOOTER
+=========================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <!-- Logo -->
+
+        <div class="footer-column">
+
+            <div class="footer-logo">
+
+                <div class="logo-circle">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>FarmVision AI</h3>
+
+                    <span>Machine Learning Platform</span>
+
+                </div>
+
+            </div>
+
+            <p>
+
+                Farm Performance & Forecasting is an AI-powered
+                Machine Learning platform that enables farmers to
+                analyze poultry farm performance, predict revenue,
+                and forecast future demand with confidence.
+
+            </p>
+
+            <div class="social-links">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                <a href="#"><i class="fab fa-github"></i></a>
+
+                <a href="#"><i class="fab fa-twitter"></i></a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Quick Links -->
+
+        <div class="footer-column">
+
+            <h4>Quick Links</h4>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#statistics">Statistics</a></li>
+
+                <li><a href="/dashboard">Dashboard</a></li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- Features -->
+
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <ul>
+
+                <li>Farm Performance</li>
+
+                <li>Revenue Prediction</li>
+
+                <li>Demand Forecasting</li>
+
+                <li>AI Analytics</li>
+
+                <li>Interactive Dashboard</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- Contact -->
+
+        <div class="footer-column">
+
+            <h4>Contact</h4>
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-building"></i>
+
+                    DASA TECHNOWORLD
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    India
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    support@farmvision.ai
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+
+                © 2026 Farm Performance & Forecasting |
+                Built using Flask, Python and Machine Learning.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===========================================
+                BACK TO TOP BUTTON
+=========================================== -->
+
+<button id="topBtn" title="Go to Top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- ===========================================
+                JAVASCRIPT
+=========================================== -->
+
+<script>
+
+const topButton = document.getElementById("topBtn");
+
+window.onscroll = function () {
+
+    if (document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300) {
+
+        topButton.style.display = "flex";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
+
+};
+
+topButton.onclick = function () {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+};
+
+</script>
+
+</body>
+
+</html>                    
