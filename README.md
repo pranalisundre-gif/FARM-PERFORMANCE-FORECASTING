@@ -418,10 +418,6 @@ in your browser.
 
 The application includes a dedicated home page introducing the farm analytics and forecasting system.
 
-<p align="center">
-  <img src="static/images/hero-farm.png" width="90%">
-</p>
-
 ---
 
 ## Dashboard
