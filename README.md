@@ -2,10 +2,10 @@
   <img src="assets/project-banner.png" width="100%">
 </p>
 
-<h1 align="center">🐔 Farm Performance & Forecasting</h1>
+<h1 align="center">Farm Performance & Forecasting</h1>
 
 <p align="center">
-  A machine learning powered Flask application for analyzing farm performance, forecasting future demand, and predicting product prices.
+  An end-to-end Machine Learning and Flask-based application for farm performance scoring, demand forecasting, and price prediction.
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-4CAF50?style=for-the-badge)
-![Data Science](https://img.shields.io/badge/Data%20Science-6C63FF?style=for-the-badge)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </p>
@@ -22,213 +22,210 @@
 
 ## 📖 Project Overview
 
-**Farm Performance & Forecasting** is an end-to-end data science and machine learning application designed to support data-driven poultry farm management.
+**Farm Performance & Forecasting** is an end-to-end Machine Learning application developed to analyze farm performance and provide predictive insights through an interactive Flask web application.
 
-The application combines historical farm data with machine learning models to provide three major analytical capabilities:
+The project combines:
 
-- 🐔 **Farm Performance Scoring**
-- 📈 **Demand Forecasting**
-- 💰 **Price Prediction**
+- Data preprocessing
+- Exploratory Data Analysis
+- Feature engineering
+- Farm performance scoring
+- Demand forecasting
+- Price prediction
+- Machine Learning model integration
+- Flask web application development
 
-A Flask web application provides an interactive interface through which users can access the analytics and prediction modules.
-
-The project follows a complete machine learning workflow from data preprocessing and exploratory analysis to feature engineering, model development, prediction, and web application integration.
-
----
-
-## 🎯 Project Objectives
-
-- Analyze overall farm performance using relevant farm metrics.
-- Generate a farm performance score.
-- Forecast future demand for poultry products.
-- Predict future product prices.
-- Convert machine learning outputs into an easy-to-use web application.
-- Support better planning and data-driven farm decisions.
+The trained models are integrated into a Flask application, allowing users to access the analytical and prediction components through a web interface.
 
 ---
 
-# 🧠 Main Modules
+## 🎯 Objectives
 
-## 1️⃣ Farm Performance Scoring
+The main objectives of this project are:
 
-The Farm Performance module evaluates farm-level information and generates an overall performance score.
-
-The analysis considers operational parameters such as:
-
-- Flock Size
-- Mortality Rate
-- Age of Flock
-- Feed Conversion Ratio (FCR)
-- Average Body Weight
-- Vaccination Status
-
-The application presents an overall performance score along with category-level performance information.
-
-### Purpose
-
-The module helps identify areas where farm performance can be improved and provides a summarized view of operational performance.
+- Analyze farm-related data and identify meaningful patterns.
+- Evaluate farm performance using relevant operational parameters.
+- Generate farm performance scores.
+- Forecast future demand.
+- Predict future prices.
+- Integrate trained Machine Learning models into a web application.
+- Present analytical and predictive results through a simple and user-friendly interface.
 
 ---
 
-## 2️⃣ Demand Forecasting
+# 🧠 Machine Learning Modules
 
-The Demand Forecasting module estimates future demand based on historical demand patterns.
+The application consists of three major Machine Learning components.
 
-Users can provide forecasting parameters and generate future demand estimates for a selected forecast period.
+---
+
+## 1. 🐔 Farm Performance Scoring
+
+The Farm Performance module evaluates farm-related operational information and generates a performance score.
+
+The module provides a summarized view of farm performance and helps identify areas that may require attention.
+
+### Key Areas
+
+- Farm-level performance
+- Operational indicators
+- Performance scoring
+- Performance categorization
 
 ### Output
 
-The application provides:
+The application provides a farm performance result based on the supplied farm information.
 
-- Forecast Date
-- Forecasted Demand
-- Lower Bound
-- Upper Bound
+---
 
-This allows users to understand expected future demand as well as the forecast range.
+## 2. 📈 Demand Forecasting
 
-### Purpose
+The Demand Forecasting module uses historical data to generate future demand forecasts.
 
-Demand forecasting can support:
+### Forecast Output
+
+The forecasting component provides future demand estimates that can be used for planning and decision-making.
+
+### Potential Applications
 
 - Production planning
+- Resource planning
 - Inventory planning
-- Resource allocation
-- Future operational decisions
+- Demand management
 
 ---
 
-## 3️⃣ Price Prediction
+## 3. 💰 Price Prediction
 
-The Price Prediction module estimates future poultry product prices using historical information and the trained prediction model.
+The Price Prediction module generates predicted future prices using the trained Machine Learning model.
 
-Users can select the required product and forecasting period to generate predicted prices.
+### Prediction Output
 
-### Output
+The application provides predicted price information for the selected input conditions.
 
-The application provides:
+### Potential Applications
 
-- Prediction Date
-- Predicted Price
-- Lower Bound
-- Upper Bound
-
-### Purpose
-
-Price prediction can support:
-
-- Pricing decisions
+- Price planning
 - Revenue planning
-- Market planning
-- Future business decisions
+- Market analysis
+- Business decision-making
 
 ---
 
-# 🔄 Machine Learning Workflow
+# 🔄 Project Workflow
 
-The project follows the following workflow:
+The project follows a complete Machine Learning workflow:
 
 ```text
-Raw Farm Data
-      ↓
+Raw Data
+   │
+   ▼
 Data Preprocessing
-      ↓
+   │
+   ▼
 Exploratory Data Analysis
-      ↓
+   │
+   ▼
 Feature Engineering
-      ↓
-Model Development
-      ↓
-Farm Performance Scoring
-      ↓
-Demand Forecasting
-      ↓
-Price Prediction
-      ↓
-Flask Web Application
-      ↓
-Interactive Results
+   │
+   ├──────────────────────┐
+   ▼                      ▼
+Farm Performance      Forecasting &
+Scoring               Price Prediction
+   │                      │
+   └──────────┬───────────┘
+              ▼
+       Trained ML Models
+              │
+              ▼
+       Flask Application
+              │
+              ▼
+       Interactive Results
 ```
 
 ---
 
 # 📓 Notebook Workflow
 
-The project contains separate notebooks for different stages of development:
+The project contains six organized notebooks representing the main stages of the Machine Learning workflow.
 
-```text
-01_data_preprocessing.ipynb
-        ↓
-02_EDA.ipynb
-        ↓
-03_feature_engineering.ipynb
-        ↓
-04_farm_performance_scoring.ipynb
-        ↓
-05_demand_forecasting.ipynb
-        ↓
-06_price_prediction.ipynb
-```
+### `01_data_preprocessing.ipynb`
 
-### Notebook 01 — Data Preprocessing
+Performs the initial preparation and preprocessing of the available data.
 
-Prepares the source data for analysis and machine learning.
+### `02_EDA.ipynb`
 
-### Notebook 02 — EDA
+Performs Exploratory Data Analysis to understand the dataset, distributions, patterns, and relationships.
 
-Explores the available data and identifies relevant patterns and relationships.
+### `03_feature_engineering.ipynb`
 
-### Notebook 03 — Feature Engineering
+Creates and prepares the features required for the Machine Learning components.
 
-Creates and prepares features required by the machine learning models.
-
-### Notebook 04 — Farm Performance Scoring
+### `04_farm_performance_scoring.ipynb`
 
 Develops the farm performance scoring component.
 
-### Notebook 05 — Demand Forecasting
+### `05_demand_forecasting.ipynb`
 
 Develops the demand forecasting component.
 
-### Notebook 06 — Price Prediction
+### `06_price_prediction.ipynb`
 
 Develops the price prediction component.
 
 ---
 
-# 🌐 Web Application
+# 🌐 Flask Web Application
 
-The machine learning components are integrated into a Flask web application.
+The Machine Learning components are integrated into a Flask-based web application.
 
-### Application Pages
+The application provides a web interface for accessing the project functionality without requiring users to directly interact with the notebooks.
 
-The application includes:
+### Application Flow
 
-- 🏠 Home
-- 📊 Dashboard
-- 🐔 Farm Performance
-- 📈 Demand Forecasting
-- 💰 Price Prediction
-- ℹ️ About
+```text
+Home Page
+    │
+    ▼
+Dashboard
+    │
+    ├── Farm Performance
+    │
+    ├── Demand Forecasting
+    │
+    └── Price Prediction
+```
 
 ---
 
-# 📊 Dashboard
+# 🖥️ Application Interface
 
-The dashboard provides a centralized overview of farm analytics.
+The frontend is built using:
 
-The application dashboard presents information such as:
+- HTML
+- CSS
+- JavaScript
+- Flask
 
-- Overall Performance Score
-- Flock Size
-- Mortality Rate
-- Feed Conversion Ratio
-- Profitability
-- Performance Trends
-- Performance Categories
-- Mortality Trends
-- Demand Forecast
-- Price Prediction
+The application includes:
+
+```text
+templates/
+├── home.html
+└── dashboard.html
+```
+
+Static resources are organized as:
+
+```text
+static/
+├── images/
+│   └── hero-farm.png
+├── dashboard.css
+├── script.js
+└── style.css
+```
 
 ---
 
@@ -238,12 +235,13 @@ The application dashboard presents information such as:
 |---|---|
 | Programming Language | Python |
 | Web Framework | Flask |
-| Machine Learning | Python ML Libraries |
+| Machine Learning | Python Machine Learning Libraries |
 | Data Processing | Pandas |
 | Numerical Computing | NumPy |
+| Data Analysis | Jupyter Notebook |
 | Frontend | HTML, CSS, JavaScript |
-| Model Storage | Pickle (`.pkl`) |
-| Development | Jupyter Notebook / VS Code |
+| Model Serialization | Pickle |
+| Development Environment | VS Code / Jupyter Notebook |
 
 ---
 
@@ -252,15 +250,12 @@ The application dashboard presents information such as:
 ```text
 Farm-Performance-and-Forecasting
 │
-├── app.py
-├── predictor.py
-├── README.md
-├── LICENSE
-├── .gitignore
+├── assets/
+│   └── project-banner.png
 │
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── processed/
+│   └── raw/
 │
 ├── models/
 │   ├── demand_feature_columns.pkl
@@ -287,44 +282,59 @@ Farm-Performance-and-Forecasting
 │   ├── script.js
 │   └── style.css
 │
-└── templates/
-    ├── dashboard.html
-    └── home.html
+├── templates/
+│   ├── dashboard.html
+│   └── home.html
+│
+├── app.py
+├── predictor.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-# 📸 Application Preview
+# 📊 Model Files
 
-## 🏠 Home Page
+The project contains serialized model and supporting files used by the application:
 
-<p align="center">
-  <img src="static/images/hero-farm.png" width="90%">
-</p>
+```text
+models/
+├── demand_feature_columns.pkl
+├── demand_forecast.pkl
+├── farm_feature_columns.pkl
+├── farm_performance.pkl
+├── forecast_seed.pkl
+├── label_encoder.pkl
+├── price_feature_columns.pkl
+└── price_prediction.pkl
+```
 
----
-
-## 📊 Dashboard
-
-The dashboard provides a centralized view of farm performance and forecasting information.
-
----
-
-## 🐔 Farm Performance
-
-The Farm Performance module accepts farm information and generates an overall performance score with category-level results.
+These files support the Machine Learning components integrated into the Flask application.
 
 ---
 
-## 📈 Demand Forecasting
+## ⚠️ Large Model File
 
-The Demand Forecasting module generates future demand estimates along with forecast ranges.
+The following model file exceeds GitHub's standard individual file-size limit:
 
----
+```text
+models/price_prediction.pkl
+```
 
-## 💰 Price Prediction
+Therefore, this file is excluded from Git tracking using `.gitignore`.
 
-The Price Prediction module generates future price estimates along with prediction ranges.
+The local copy can remain in the project folder for local application use.
+
+The corresponding model-development workflow is available in:
+
+```text
+notebooks/06_price_prediction.ipynb
+```
+
+This keeps the repository within GitHub's file-size limitations while retaining the complete model-development workflow.
 
 ---
 
@@ -333,22 +343,24 @@ The Price Prediction module generates future price estimates along with predicti
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/pranaliundre-gif/Farm-Performance-and-Forecasting.git
+git clone https://github.com/pranalisundre-gif/FARM-PERFORMANCE-FORECASTING.git
 ```
 
 ## 2. Navigate to the Project
 
 ```bash
-cd Farm-Performance-and-Forecasting
+cd FARM-PERFORMANCE-FORECASTING
 ```
 
 ## 3. Create a Virtual Environment
+
+### Windows
 
 ```bash
 python -m venv venv
 ```
 
-### Windows
+Activate the environment:
 
 ```bash
 venv\Scripts\activate
@@ -357,18 +369,28 @@ venv\Scripts\activate
 ### macOS / Linux
 
 ```bash
+python3 -m venv venv
+```
+
+Activate the environment:
+
+```bash
 source venv/bin/activate
 ```
 
+---
+
 ## 4. Install Dependencies
 
-If a `requirements.txt` file is included:
+The project includes a `requirements.txt` file.
+
+Run:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Otherwise, install the dependencies required by the project environment.
+---
 
 ## 5. Run the Flask Application
 
@@ -376,35 +398,75 @@ Otherwise, install the dependencies required by the project environment.
 python app.py
 ```
 
+---
+
 ## 6. Open the Application
 
-Open your browser and visit:
+After starting the Flask server, open:
 
 ```text
 http://127.0.0.1:5000
 ```
 
+in your browser.
+
 ---
 
-# 💡 Business Applications
+# 📸 Application Preview
 
-The system demonstrates how machine learning can support poultry farm decision-making through:
+## Home Page
 
-### Better Planning
+The application includes a dedicated home page introducing the farm analytics and forecasting system.
 
-Use demand forecasts to support future production and resource planning.
+<p align="center">
+  <img src="static/images/hero-farm.png" width="90%">
+</p>
 
-### Performance Monitoring
+---
 
-Use farm performance scores to identify areas requiring attention.
+## Dashboard
+
+The dashboard provides a centralized interface for accessing farm performance analysis and predictive capabilities.
+
+---
+
+## Farm Performance
+
+The Farm Performance module evaluates the supplied farm information and generates a performance result.
+
+---
+
+## Demand Forecasting
+
+The Demand Forecasting module generates future demand estimates based on the available historical information.
+
+---
+
+## Price Prediction
+
+The Price Prediction module generates future price estimates using the trained prediction model.
+
+---
+
+# 💡 Business Use Cases
+
+The system demonstrates how Machine Learning can support farm management and planning.
+
+### Farm Performance Monitoring
+
+Performance scoring can help identify farms or operational areas that may require attention.
+
+### Demand Planning
+
+Demand forecasting can support future production and resource planning.
 
 ### Price Planning
 
-Use predicted prices to support future pricing and revenue decisions.
+Price prediction can support future pricing and revenue-related decisions.
 
-### Data-Driven Decisions
+### Data-Driven Decision Making
 
-Combine historical data, machine learning predictions, and interactive analytics to support operational decisions.
+Combining historical data, Machine Learning predictions, and interactive analytics provides a broader decision-support workflow.
 
 ---
 
@@ -412,16 +474,17 @@ Combine historical data, machine learning predictions, and interactive analytics
 
 Potential future improvements include:
 
-- Real-time farm data integration.
 - Automated model retraining.
-- Live market price integration.
-- Additional farm performance metrics.
-- Advanced forecasting models.
+- Real-time farm data integration.
+- Live market price data.
+- Advanced forecasting techniques.
+- Additional farm performance indicators.
 - Model explainability.
-- Automated data refresh.
+- Automated data pipelines.
 - Cloud deployment.
-- Mobile-friendly application enhancements.
-- Role-based access for farm managers and administrators.
+- Scheduled prediction updates.
+- User authentication and role-based access.
+- Mobile-responsive improvements.
 
 ---
 
@@ -434,13 +497,14 @@ This project demonstrates practical experience in:
 - Data Preprocessing
 - Exploratory Data Analysis
 - Feature Engineering
-- Forecasting
 - Predictive Analytics
-- Flask Web Development
+- Forecasting
+- Flask
 - Model Integration
 - Data Visualization
-- Business Analytics
-- End-to-End ML Application Development
+- Jupyter Notebook
+- Web Application Development
+- End-to-End Machine Learning Workflow
 
 ---
 
@@ -460,7 +524,7 @@ Information Technology Student
 
 ### GitHub
 
-https://github.com/pranaliundre-gif
+https://github.com/pranalisundre-gif
 
 ### LinkedIn
 
@@ -470,7 +534,7 @@ _Add your LinkedIn profile URL here._
 
 # ⭐ Support
 
-If you found this project useful or interesting, consider giving the repository a ⭐ on GitHub.
+If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
 
 ---
 
